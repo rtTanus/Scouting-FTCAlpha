@@ -1,24 +1,137 @@
-.score-container {
-    margin-bottom: 1rem;
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
 }
+
+.header-container {
+    background:linear-gradient(to right, #0FC5E5, #005D9C) ;;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-family: "Lato", sans-serif;
+    font-style: bold;
+}
+
+.header-container img {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100px;
+    height: auto;
+}
+
+/*Organização do site*/
+
+.main-container {
+    margin-top: 30px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    width: 100%;
+}
+
+/*Informações da equipe*/
+
+.row-h1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.row-content {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/*Separação dos periodos*/
+
+.row-info, .score-container-1, .score-container-2, .score-container-3 {
+    background-color: #f8f9fa;
+    border: 2px solid #0FC5E5;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 95%; /* Limita a largura máxima */
+    margin: 20px auto; /* Centraliza com margin auto e espaço superior de 20px */
+}
+
+/*Configurações Gerais*/
+
+.inputinfoteam {
+    margin-left: 15px;
+}
+
+#roundNumber {
+    padding: 12px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.row-h5 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+input {
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000000; /* Adicionando borda se necessário */
+}
+
+label {
+    display: contents;
+    font-size: 20px;
+}
+
+.robo-estacionou {
+    margin-top: 20px;
+}
+
 .button-group {
     display: flex;
     align-items: center;
 }
+
+.btn-outline-primary {
+    border: 1px #0FC5E5 solid;
+    color: #0FC5E5 !important;
+    background-color: white !important; 
+}
+
+.btn-primary {
+    color: white !important; 
+    background-color: #0FC5E5 !important;
+}
+
 .button-group button {
     width: 40px;
+    margin: 15px;
+    padding: 8px;
+    color: white;
+    background-color: #0FC5E5;
+    border: 1px solid;
 }
 .btn-teal {
-background-color: #008CBA; /* Teal color for the 'No' button */
-color: white; /* Text color */
+background-color: #0FC5E5;
+color: white;
 }
 
 .btn-teal:hover {
-background-color: #005f73; /* Darken on hover */
+background-color: #0FC5E5;
 }
 
-.btn-group{
-    button{
-        color: black;
-    }
+.Enviar {
+    padding: 10px;
+    margin-bottom: 80px;
+    color: white;
+    background-color: #0FC5E5;
+    border-radius: 10px;
+    width: 200px;
+    border: 1px solid;
+    display: block; /* Para garantir que o botão seja um bloco */
+    margin-left: auto; /* Alinha o botão ao centro */
+    margin-right: auto; /* Alinha o botão ao centro */
 }
