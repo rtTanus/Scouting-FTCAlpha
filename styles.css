@@ -1,0 +1,24 @@
+.score-container {
+    margin-bottom: 1rem;
+}
+.button-group {
+    display: flex;
+    align-items: center;
+}
+.button-group button {
+    width: 40px;
+}
+.btn-teal {
+background-color: #008CBA; /* Teal color for the 'No' button */
+color: white; /* Text color */
+}
+
+.btn-teal:hover {
+background-color: #005f73; /* Darken on hover */
+}
+
+.btn-group{
+    button{
+        color: black;
+    }
+}
