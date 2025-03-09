@@ -135,3 +135,22 @@ background-color: #0FC5E5;
     margin-left: auto; /* Alinha o botão ao centro */
     margin-right: auto; /* Alinha o botão ao centro */
 }
+
+@media (max-width: 600px) {
+    .row-content {
+        display: flex;
+        flex-direction: column; /* Faz os itens ficarem um abaixo do outro */
+        align-items: stretch; /* Faz os itens ocuparem toda a largura disponível */
+        gap: 10px; /* Adiciona espaçamento entre os itens */
+    }
+
+    .col {
+        display: flex;
+        flex-direction: column; /* Faz o label e o input ficarem um abaixo do outro */
+        width: 100%;
+    }
+
+    .inputinfoteam {
+        width: 100%; /* Faz os inputs ocuparem toda a largura disponível */
+    }
+}
