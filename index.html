@@ -33,192 +33,231 @@
         <form
         action="https://sheetdb.io/api/v1/5nuli2thi7j7l"
         method="POST"
-        name="Banco de Dados - Scouting FTC 2025">
-            <div class="row-info">
-                <h1 class="row-h1">INFORMAÇÕES SOBRE A EQUIPE</h1>
-                <div class="row-content">
-                    <div class="col">
-                        <label>Nome:</label>
-                        <input class="inputinfoteam" type="text" name="data[Nome]" id="teamName">
+        name="Banco de Dados - Scouting FTC 2025"
+        id="meuFormulario"
+        onsubmit="return handleFormSubmit(event)">
+        <div class="row-info">
+            <h1 class="row-h1">INFORMAÇÕES SOBRE A EQUIPE</h1>
+            <div class="row-content">
+                <div class="col">
+                    <label>Nome:</label>
+                    <input class="inputinfoteam" type="text" name="data[Nome]" id="teamName">
+                </div>
+                <div class="col">
+                    <label>Número da equipe:</label>
+                    <input class="inputinfoteam" type="number" name="data[Numero_da_equipe]" id="teamNumber">
+                </div>
+                <div class="col">
+                    <label>Round:</label>
+                    <input class="inputinfoteam" type="number" name="data[Round]" id="teamName">
+                </div>
+            </div>
+        </div>
+    
+        <div class="score-container-1">
+            <h5 class="row-h5">AUTÔNOMO</h5>
+            <div class="row">
+                <div class="col">
+                    <label>SAMPLES in NET:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('netAutoSample', -1)">-</button>
+                        <input type="text" id="netAutoSample" name="data[Samples_Net_Auto]" value="0" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('netAutoSample', 1)">+</button>
                     </div>
-                    <div class="col">
-                        <label>Número da equipe:</label>
-                        <input class="inputinfoteam" type="number" name="data[Numero_da_equipe]" id="teamNumber">
+                </div>
+    
+                <div class="col">
+                    <label>SAMPLES in Low BASKET:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowAutoSample', -1)">-</button>
+                        <input type="text" id="lowAutoSample" value="0" name="data[Sample_Low_Auto]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowAutoSample', 1)">+</button>
                     </div>
-                    <div class="col">
-                        <label>Round:</label>
-                        <input class="inputinfoteam" type="number"name="data[Round]" id="teamName">
+                </div>
+    
+                <div class="col">
+                    <label>SAMPLES in High BASKET:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highAutoSample', -1)">-</button>
+                        <input type="text" id="highAutoSample" value="0" name="data[Sample_High_Auto]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highAutoSample', 1)">+</button>
                     </div>
                 </div>
             </div>
     
-            <div class="score-container-1">
-                <h5 class="row-h5">AUTÔNOMO</h5>
-                <div class="row">
-                    <div class="col">
-                        <label>SAMPLES in NET:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('netAutoSample', -1)">-</button>
-                            <input type="text" id="netAutoSample" name="data[Samples_Net_Auto]" value="0" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('netAutoSample', 1)">+</button>
-                        </div>
-                    </div>
-    
-                    <div class="col">
-                        <label>SAMPLES in Low BASKET:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowAutoSample', -1)">-</button>
-                            <input type="text" id="lowAutoSample" value="0" name="data[Sample_Low_Auto]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowAutoSample', 1)">+</button>
-                        </div>
-                    </div>
-    
-                    <div class="col">
-                        <label>SAMPLES in High BASKET:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('highAutoSample', -1)">-</button>
-                            <input type="text" id="highAutoSample" value="0" name="data[Sample_High_Auto]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('highAutoSample', 1)">+</button>
-                        </div>
+            <div class="row">
+                <div class="col">
+                    <label>SPECIMEN in Low CHAMBER:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowAutoSpecimen', -1)">-</button>
+                        <input type="text" id="lowAutoSpecimen" value="0" name="data[Specimen_Low_Auto]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowAutoSpecimen', 1)">+</button>
                     </div>
                 </div>
-    
-                <div class="row">
-                    <div class="col">
-                        <label>SPECIMEN in Low CHAMBER:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowAutoSpecimen', -1)">-</button>
-                            <input type="text" id="lowAutoSpecimen" value="0" name="data[Specimen_Low_Auto]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowAutoSpecimen', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <label>SPECIMEN in High CHAMBER:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('highAutoSpecimen', -1)">-</button>
-                            <input type="text" id="highAutoSpecimen" value="0" name="data[Specimen_High_Auto]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('highAutoSpecimen', 1)">+</button>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="robo-estacionou">
-                    <h3>ROBÔ ESTACIONOU?</h3>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline-primary" id="buttonClimbAuto0"
-                            onclick="setClimbAuto('buttonClimbAuto0')">N/O</button>
-                        <button type="button" class="btn btn-outline-primary" id="buttonClimbAutoObs"
-                            onclick="setClimbAuto('buttonClimbAutoObs')">Observação</button>
-                        <button type="button" class="btn btn-outline-primary" id="buttonClimbAutoAsc"
-                            onclick="setClimbAuto('buttonClimbAutoAsc')">Ascent</button>
-                            <input type="hidden" name="data[Auto_Climb]" id="AutoClimb"  value="buttonClimbAuto0">
-                    </div>
-                </div>
-    
-            </div>
-    
-            <div class="score-container-2">
-                <h5 class="row-h5">TELEOPERADO</h5>
-                <div class="row">
-                    <div class="col">
-                        <label>SAMPLES in NET:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('netTeleopSample', -1)">-</button>
-                            <input type="text" id="netTeleopSample" value="0" name="data[Samples_Net_Teleop]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('netTeleopSample', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <label>SAMPLES in Low BASKET:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowTeleopSample', -1)">-</button>
-                            <input type="text" id="lowTeleopSample" value="0" name="data[Sample_Low_Teleop]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowTeleopSample', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <label>SAMPLES in High BASKET:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('highTeleopSample', -1)">-</button>
-                            <input type="text" id="highTeleopSample" value="0" name="data[Sample_High_Teleop]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('highTeleopSample', 1)">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label>SPECIMEN in Low CHAMBER:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowTeleopSpecimen', -1)">-</button>
-                            <input type="text" id="lowTeleopSpecimen" value="0" name="data[Specimen_Low_Teleop]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowTeleopSpecimen', 1)">+</button>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <label>SPECIMEN in High CHAMBER:</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('highTeleopSpecimen', -1)">-</button>
-                            <input type="text" id="highTeleopSpecimen" value="0" name="data[Specimen_High_Teleop]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('highTeleopSpecimen', 1)">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="robo-estacionou">
-                    <h3>ROBÔ CLIMBOU?</h3>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleop0"
-                            onclick="setClimbTeleop('buttonClimbTeleop0')">N/O</button>
-                        <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleopObs"
-                            onclick="setClimbTeleop('buttonClimbTeleopObs')">Obs</button>
-                        <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleop1"
-                            onclick="setClimbTeleop('buttonClimbTeleop1')">Nível 1</button>
-                        <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleop2"
-                            onclick="setClimbTeleop('buttonClimbTeleop2')">Nível 2</button>
-                        <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleop3"
-                            onclick="setClimbTeleop('buttonClimbTeleop3')">Nível 3</button>
-                            <input type="hidden" name="data[Teleop_Climb]" id="TeleopClimb" value="buttonClimbAuto0">
+                <div class="col">
+                    <label>SPECIMEN in High CHAMBER:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highAutoSpecimen', -1)">-</button>
+                        <input type="text" id="highAutoSpecimen" value="0" name="data[Specimen_High_Auto]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highAutoSpecimen', 1)">+</button>
                     </div>
                 </div>
             </div>
     
-            <div class="score-container-3">
-                <h5 class="row-h5">PENALIDADES</h5>            
-                <div class="row">
-                    <div class="col">
-                        <label>Penalidade baixa</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowPenalty', -1)">-</button>
-                            <input type="text" id="lowPenalty" value="0" name="data[Penalidade_baixa]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('lowPenalty', 1)">+</button>
-                        </div>
+            <div class="robo-estacionou">
+                <h3>ROBÔ ESTACIONOU?</h3>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" id="buttonClimbAuto0" onclick="setClimbAuto('buttonClimbAuto0')">N/O</button>
+                    <button type="button" class="btn btn-outline-primary" id="buttonClimbAutoObs" onclick="setClimbAuto('buttonClimbAutoObs')">Observação</button>
+                    <button type="button" class="btn btn-outline-primary" id="buttonClimbAutoAsc" onclick="setClimbAuto('buttonClimbAutoAsc')">Ascent</button>
+                    <input type="hidden" name="data[Auto_Climb]" id="AutoClimb" value="buttonClimbAuto0">
+                </div>
+            </div>
+    
+        </div>
+    
+        <div class="score-container-2">
+            <h5 class="row-h5">TELEOPERADO</h5>
+            <div class="row">
+                <div class="col">
+                    <label>SAMPLES in NET:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('netTeleopSample', -1)">-</button>
+                        <input type="text" id="netTeleopSample" value="0" name="data[Samples_Net_Teleop]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('netTeleopSample', 1)">+</button>
                     </div>
-                    <div class="col">
-                        <label>Penalidade alta</label>
-                        <div class="button-group">
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('HighPenalty', -1)">-</button>
-                            <input type="text" id="HighPenalty" value="0" name="data[Penalidade_alta]" readonly>
-                            <button class="btn btn-secondary" type="button" onclick="updateScore('HighPenalty', 1)">+</button>
-                        </div>
+                </div>
+                <div class="col">
+                    <label>SAMPLES in Low BASKET:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowTeleopSample', -1)">-</button>
+                        <input type="text" id="lowTeleopSample" value="0" name="data[Sample_Low_Teleop]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowTeleopSample', 1)">+</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <label>SAMPLES in High BASKET:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highTeleopSample', -1)">-</button>
+                        <input type="text" id="highTeleopSample" value="0" name="data[Sample_High_Teleop]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highTeleopSample', 1)">+</button>
                     </div>
                 </div>
             </div>
-            <br>
+            <div class="row">
+                <div class="col">
+                    <label>SPECIMEN in Low CHAMBER:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowTeleopSpecimen', -1)">-</button>
+                        <input type="text" id="lowTeleopSpecimen" value="0" name="data[Specimen_Low_Teleop]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowTeleopSpecimen', 1)">+</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <label>SPECIMEN in High CHAMBER:</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highTeleopSpecimen', -1)">-</button>
+                        <input type="text" id="highTeleopSpecimen" value="0" name="data[Specimen_High_Teleop]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highTeleopSpecimen', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="robo-estacionou">
+                <h3>ROBÔ CLIMBOU?</h3>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleop0" onclick="setClimbTeleop('buttonClimbTeleop0')">N/O</button>
+                    <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleopObs" onclick="setClimbTeleop('buttonClimbTeleopObs')">Observação</button>
+                    <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleop1" onclick="setClimbTeleop('buttonClimbTeleop1')">Nível 1</button>
+                    <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleop2" onclick="setClimbTeleop('buttonClimbTeleop2')">Nível 2</button>
+                    <button type="button" class="btn btn-outline-primary" id="buttonClimbTeleop3" onclick="setClimbTeleop('buttonClimbTeleop3')">Nível 3</button>
+                    <input type="hidden" name="data[Teleop_Climb]" id="TeleopClimb" value="buttonClimbAuto0">
+                </div>
+            </div>
+        </div>
     
-            <button type="submit" class="Enviar">Enviar</button>
-        </form>
-    </main>
+        <div class="score-container-3">
+            <h5 class="row-h5">PENALIDADES</h5>
+            <div class="row">
+                <div class="col">
+                    <label>Penalidade baixa</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowPenalty', -1)">-</button>
+                        <input type="text" id="lowPenalty" value="0" name="data[Penalidade_baixa]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('lowPenalty', 1)">+</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <label>Penalidade alta</label>
+                    <div class="button-group">
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highPenalty', -1)">-</button>
+                        <input type="text" id="highPenalty" value="0" name="data[Penalidade_alta]" readonly>
+                        <button class="btn btn-secondary" type="button" onclick="updateScore('highPenalty', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="form-container">
+            <div class="submit-container">
+                <input class="submitbtn" type="submit" value="Enviar">
+            </div>
+        </div>
+    </form>
     
     <script>
-        document.getElementById("meuFormulario").addEventListener("submit", function(event) {
-            event.preventDefault(); // Impede o envio do formulário (sem a necessidade de backend ainda)
+        function updateScore(id, value) {
+            const input = document.getElementById(id);
+            let currentValue = parseInt(input.value);
+            currentValue += value;
+            if (currentValue < 0) currentValue = 0; // Impede valores negativos
+            input.value = currentValue;
+        }
     
-            // Reseta os campos do formulário
-            document.getElementById("meuFormulario").reset();
+        function setClimbAuto(buttonId) {
+            document.getElementById('AutoClimb').value = buttonId;
+            resetClimbAutoButtons();
+            document.getElementById(buttonId).classList.add('active');
+        }
     
-            // Opcional: Adicione um alerta ou qualquer outra ação que você queira realizar após o envio
-            alert("Dados enviados e formulário resetado!");
-        });
-    </script>
+        function resetClimbAutoButtons() {
+            const buttons = document.querySelectorAll('#buttonClimbAuto0, #buttonClimbAutoObs, #buttonClimbAutoAsc');
+            buttons.forEach(button => button.classList.remove('active'));
+        }
+    
+        function setClimbTeleop(buttonId) {
+            document.getElementById('TeleopClimb').value = buttonId;
+            resetClimbTeleopButtons();
+            document.getElementById(buttonId).classList.add('active');
+        }
+    
+        function resetClimbTeleopButtons() {
+            const buttons = document.querySelectorAll('#buttonClimbTeleop0, #buttonClimbTeleopObs, #buttonClimbTeleop1, #buttonClimbTeleop2, #buttonClimbTeleop3');
+            buttons.forEach(button => button.classList.remove('active'));
+        }
+    
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Previne o envio padrão do formulário
+            
+            // Envia os dados do formulário para o SheetDB
+            const form = event.target;
+            const formData = new FormData(form);
+    
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Formulário enviado com sucesso
+                alert('Dados enviados com sucesso!');
+                form.reset(); // Reseta o formulário
+                window.location.href = "https://rttanus.github.io/Scouting-FTCAlpha/"; // Volta para a página inicial
+            })
+            .catch(error => {
+                console.error('Erro ao enviar o formulário:', error);
+            });
+        }
+    </script>    
     
 
 </html>
