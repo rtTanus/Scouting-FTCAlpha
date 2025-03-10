@@ -205,36 +205,6 @@
     </form>
     
     <script>
-        function updateScore(id, value) {
-            const input = document.getElementById(id);
-            let currentValue = parseInt(input.value);
-            currentValue += value;
-            if (currentValue < 0) currentValue = 0; // Impede valores negativos
-            input.value = currentValue;
-        }
-    
-        function setClimbAuto(buttonId) {
-            document.getElementById('AutoClimb').value = buttonId;
-            resetClimbAutoButtons();
-            document.getElementById(buttonId).classList.add('active');
-        }
-    
-        function resetClimbAutoButtons() {
-            const buttons = document.querySelectorAll('#buttonClimbAuto0, #buttonClimbAutoObs, #buttonClimbAutoAsc');
-            buttons.forEach(button => button.classList.remove('active'));
-        }
-    
-        function setClimbTeleop(buttonId) {
-            document.getElementById('TeleopClimb').value = buttonId;
-            resetClimbTeleopButtons();
-            document.getElementById(buttonId).classList.add('active');
-        }
-    
-        function resetClimbTeleopButtons() {
-            const buttons = document.querySelectorAll('#buttonClimbTeleop0, #buttonClimbTeleopObs, #buttonClimbTeleop1, #buttonClimbTeleop2, #buttonClimbTeleop3');
-            buttons.forEach(button => button.classList.remove('active'));
-        }
-    
         function handleFormSubmit(event) {
             event.preventDefault(); // Previne o envio padrão do formulário
             
