@@ -114,7 +114,7 @@ label {
     background-color: #0FC5E5;
     border: 1px solid;
 }
-*/
+
 
 .btn-teal {
 background-color: #0FC5E5;
@@ -133,11 +133,12 @@ background-color: #0FC5E5;
     border-radius: 10px;
     width: 200px;
     border: 1px solid;
-    display: block; /* Para garantir que o botão seja um bloco */
-    margin-left: auto; /* Alinha o botão ao centro */
-    margin-right: auto; /* Alinha o botão ao centro */
-}
+    display: block;
+    margin-left: auto; 
+    margin-right: auto; 
 
+}
+*/
 @media (max-width: 600px) {
     .row-content {
         display: flex;
