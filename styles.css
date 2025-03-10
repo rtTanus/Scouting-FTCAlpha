@@ -89,7 +89,7 @@ label {
 .robo-estacionou {
     margin-top: 20px;
 }
-/*
+
 .button-group {
     display: flex;
     align-items: center;
@@ -138,7 +138,7 @@ background-color: #0FC5E5;
     margin-right: auto; 
 
 }
-*/
+
 @media (max-width: 600px) {
     .row-content {
         display: flex;
